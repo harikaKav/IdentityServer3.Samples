@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{49A08B90-4127-4614-B228-CB83531CDA53}"
 EndProject
@@ -15,6 +15,8 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcClient", "src\MvcClient\MvcClient.xproj", "{A57F3C0A-A8AB-411E-861F-37F620AB0FB8}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Api", "src\Api\Api.xproj", "{728F86D8-D23F-4DDD-96DE-0F9FE08BA825}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcAngularClient", "src\MvcAngularClient\MvcAngularClient.xproj", "{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{728F86D8-D23F-4DDD-96DE-0F9FE08BA825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{728F86D8-D23F-4DDD-96DE-0F9FE08BA825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{728F86D8-D23F-4DDD-96DE-0F9FE08BA825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +48,6 @@ Global
 		{219F7ED9-2215-43FC-B339-F7D2A50CE239} = {49A08B90-4127-4614-B228-CB83531CDA53}
 		{A57F3C0A-A8AB-411E-861F-37F620AB0FB8} = {49A08B90-4127-4614-B228-CB83531CDA53}
 		{728F86D8-D23F-4DDD-96DE-0F9FE08BA825} = {49A08B90-4127-4614-B228-CB83531CDA53}
+		{29F5A3B3-02FB-4FB4-91D8-6C6999F44A62} = {49A08B90-4127-4614-B228-CB83531CDA53}
 	EndGlobalSection
 EndGlobal

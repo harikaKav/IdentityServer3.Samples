@@ -39,10 +39,12 @@ namespace IdentityServer.Configuration
                     RedirectUris = new List<string>
                     {
                         "http://localhost:19276/signin-oidc",
+                        "http://localhost:2870/signin-oidc",
                     },
                     PostLogoutRedirectUris = new List<string>
                     {
                         "http://localhost:19276/",
+                        "http://localhost:2870/",
                     },
 
                     // access to identity data and api1

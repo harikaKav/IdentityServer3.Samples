@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using IdentityServer3.Core.Configuration;
 using IdentityServer.Configuration;
 using System.Security.Cryptography.X509Certificates;
+using IdentityServer3.Core.Services.Default;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.Logging;
 using Serilog;
@@ -28,6 +29,7 @@ namespace IdentityServer
             loggerFactory.AddDebug();
 
             app.UseIISPlatformHandler();
+            app.UseStaticFiles();
             
 
             var certFile = env.ApplicationBasePath + "\\idsrv3test.pfx";
@@ -43,7 +45,18 @@ namespace IdentityServer
                 RequireSsl = false
             };
 
+            var viewOptions = new DefaultViewServiceOptions();
+            viewOptions.Stylesheets.Add("/css/Site.css");
+            viewOptions.CacheViews = false;
+
+            var templatePath = System.IO.Path.Combine(env.ApplicationBasePath, "templates");
+            viewOptions.ViewLoader = new Registration<IViewLoader>(new FileSystemWithEmbeddedFallbackViewLoader(templatePath));
+            idsrvOptions.Factory.ConfigureDefaultViewService(viewOptions);
+            
+
             app.UseIdentityServer(idsrvOptions);
+            
+           
         }
 
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);

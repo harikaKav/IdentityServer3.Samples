@@ -24,6 +24,11 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddCors(options =>
+                                    options.AddPolicy("AllowAngularApp", p => p.WithOrigins("http://localhost:2870")
+                                                                        .AllowAnyMethod()
+                                                                        .AllowAnyHeader()));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -37,16 +42,18 @@ namespace Api
 
             app.UseJwtBearerAuthentication(options =>
             {
-                options.Authority = "http://localhost:5000";
+                options.Authority = "http://localhost:18942";
                 options.RequireHttpsMetadata = false;
 
-                options.Audience = "http://localhost:5000/resources";
+                options.Audience = "http://localhost:18942/resources";
                 options.AutomaticAuthenticate = true;
             });
 
             app.UseMiddleware<RequiredScopesMiddleware>(new List<string> { "api1" });
 
+            app.UseCors("AllowAngularApp");
             app.UseMvc();
+            
         }
 
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);

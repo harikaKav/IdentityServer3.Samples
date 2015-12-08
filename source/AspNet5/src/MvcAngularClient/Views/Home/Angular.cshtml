@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Angular App";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body ng-app="MvcAngularClientApp">
+
+    <div ng-controller="MyController as vm">
+
+
+        <h2>{{testString}}</h2>
+
+        <h2>{{accessToken}}</h2>
+
+        <h4>{{identity}}</h4>
+
+    </div>
+
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
