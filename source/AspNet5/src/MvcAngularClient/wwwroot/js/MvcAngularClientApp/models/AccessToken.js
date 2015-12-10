@@ -1,4 +1,4 @@
-/// <reference path="./_references.ts" />
+/// <reference path="../../_references.ts" />
 var MvcAngularClientApp;
 (function (MvcAngularClientApp) {
     "use strict";

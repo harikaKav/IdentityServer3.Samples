@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
+using MvcAngularClient.ViewModels;
 
 namespace MvcAngularClient.Controllers
 {
@@ -35,14 +36,5 @@ namespace MvcAngularClient.Controllers
 
             return await Task.FromResult(new AccessToken(token));
         }
-    }
-
-    public class AccessToken
-    {
-        public AccessToken(string token)
-        {
-            Token = token;
-        }
-        public string Token { get; set; }
     }
 }

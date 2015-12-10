@@ -1,4 +1,4 @@
-/// <reference path="./_references.ts"/>
+/// <reference path="../../_references.ts"/>
 var MvcAngularClientApp;
 (function (MvcAngularClientApp) {
     "use strict";
@@ -10,21 +10,12 @@ var MvcAngularClientApp;
         }
         MyController.prototype.activate = function () {
             var _this = this;
-            this.$scope.testString = "this is a test value";
-            this.myService.getAccessToken()
+            this.myService.getIdentity()
                 .success(function (response) {
-                _this.$scope.accessToken = response.Token;
-                _this.myService.getIdentity(_this.$scope.accessToken)
-                    .success(function (response2) {
-                    _this.$scope.identity = response2;
-                })
-                    .error(function (response2) {
-                    _this.$scope.identity = "error in getidentity";
-                });
+                _this.$scope.identity = response;
             })
                 .error(function (response) {
-                _this.$scope.accessToken = "error";
-                _this.$scope.identity = "error in getaccesstoken";
+                _this.$scope.identity = "error in getidentity";
             });
         };
         MyController.$inject = [

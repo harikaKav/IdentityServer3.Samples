@@ -1,27 +1,17 @@
 ﻿@{
+    //Layout = null;
     ViewData["Title"] = "Angular App";
 }
 
-<!DOCTYPE html>
+<div ng-app="MvcAngularClientApp">
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body ng-app="MvcAngularClientApp">
-
-    <div ng-controller="MyController as vm">
-
-
-        <h2>{{testString}}</h2>
-
-        <h2>{{accessToken}}</h2>
-
-        <h4>{{identity}}</h4>
+    <div class="container" ng-view>
 
     </div>
 
-    <script src="~/lib/angular/angular.js"></script>
-    <script src="~/js/site.js"></script>
-</body>
-</html>
+
+</div>
+
+<script src="~/lib/angular/angular.js"></script>
+<script src="~/lib/angular-route/angular-route.js"></script>
+<script src="~/js/site.js"></script>

@@ -1,23 +1,17 @@
-/// <reference path="./_references.ts" />
+/// <reference path="../../_references.ts" />
 var MvcAngularClientApp;
 (function (MvcAngularClientApp) {
     "use strict";
     var MyService = (function () {
         function MyService($http) {
             this.$http = $http;
+            this.activate();
         }
-        MyService.prototype.getIdentity = function (token) {
-            return this.$http({
-                url: "http://localhost:19806/identity",
-                method: "get",
-                data: null,
-                headers: { 'Authorization': "Bearer " + token }
-            });
+        MyService.prototype.activate = function () {
         };
-        ;
-        MyService.prototype.getAccessToken = function () {
+        MyService.prototype.getIdentity = function () {
             return this.$http({
-                url: "getaccesstoken",
+                url: MvcAngularClientApp.BASE_API_URL + "identity",
                 method: "get",
                 data: null
             });
